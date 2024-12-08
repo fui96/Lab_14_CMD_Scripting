@@ -34,11 +34,12 @@ public class FileScan {
 
             }
             else{
-                File workingDirectory = new File(System.getProperty("user.dir") + File.separator + "src");
+                File workingDirectory = new File(System.getProperty("user.dir"));
                 chooser.setCurrentDirectory(workingDirectory);
 
                 if(chooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION){
                    selectedFile = chooser.getSelectedFile();
+                   System.out.println(workingDirectory.getAbsolutePath());
                    Summary(selectedFile);
                 }
                 else  // User closed the chooser without selecting a file
